@@ -3,6 +3,10 @@
 :global {
   body {
     font-family: @font-family;
+    background: linear-gradient(145deg, #030213 0%, #0d0c2b 50%, #1a1033 100%) !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    min-height: 100vh;
   }
 
   .code {
@@ -80,7 +84,7 @@
     }
 
     &-body {
-      background-color: @body-bg-color;
+      background-color: transparent !important;
     }
 
     &-side {
@@ -137,6 +141,7 @@
     }
 
     &-main {
+      background-color: transparent !important;
       margin-left: @nav-width - 20px;
       padding: 20px;
       overflow-x: hidden;
@@ -230,5 +235,80 @@
     .magic-input-wrapper-active {
       border-color: @primary-color;
     }
+  }
+
+  /* 모든 레이아웃 컨테이너 배경 투명 */
+  .ant-layout,
+  .ant-layout-sider,
+  .ant-layout-content,
+  .ant-layout-header,
+  .sl-breadcrumb,
+  .ant-breadcrumb,
+  .ant-tabs-nav,
+  .ant-tabs-content-holder,
+  .sl-page,
+  .sl-page-body,
+  .sl-page-main,
+  .sl-page-header,
+  #app,
+  #root {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important; /* 밑줄 같은 테두리 제거 */
+  }
+
+  html, body {
+    background: linear-gradient(
+      180deg, 
+      #f8f7ff 0%,    /* 상단의 아주 밝은 라벤더 */
+      #f1f0ff 50%,   /* 중간의 부드러운 보라 */
+      #ece9ff 100%   /* 하단의 살짝 더 깊은 보라 */
+    ) !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    min-height: 100vh !important;
+  }
+
+  .ant-table {
+    background: #ffffff !important;
+  }
+
+  .ant-table-wrapper {
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.1) !important;
+    border: 1px solid #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  .ant-tabs-nav-wrap {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    background: rgba(255, 255, 255, 0.3) !important; 
+    backdrop-filter: blur(8px); 
+  }
+
+  .ant-tabs-tab {
+    background: transparent !important;
+    color: #717182 !important; /* 비활성 탭 색상 */
+  }
+
+  .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #030213 !important; /* 활성 탭 색상 */
+    font-weight: 550 !important;
+  }
+
+  .ant-breadcrumb-link, 
+  .ant-breadcrumb-separator {
+    color: #59596e !important; /* 약간 짙은 회보라색 */
+    font-size: 13px;
+  }
+
+  .ant-tabs-nav {
+    background: transparent !important;
+    border-bottom: none !important;
+  }
+
+  // 현재 페이지 이름(상단)
+  .custom-breadcrumb {
+    background: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(8px);
   }
 }

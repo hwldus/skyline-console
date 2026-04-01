@@ -6,6 +6,7 @@
 @blue-5: rgba(25, 128, 255, 10%);
 @blue-6: #e8f2ff;
 @primary-color: @blue-1;
+@primary: @blue-1;
 @info-color: @blue-2;
 @hover-color: @blue-4;
 @heading-color: rgba(0, 0, 0, 65%);
@@ -37,7 +38,9 @@
 @gray-4: #f0f1f7;
 @gray-5: #f2f3f8;
 
-@dark-text-title: rgba(0, 0, 0, 100%);
+@dark-text-title: #030213;
+@color-text-default: #030213;
+@second-text-color: #717182;
 @dark-text-title-second: rgba(0, 0, 0, 85%);
 @color-text-body: rgba(0, 0, 0, 65%);
 @color-text-caption: rgba(0, 0, 0, 45%);
@@ -144,17 +147,19 @@
 @input-bg: #f2f3f8;
 @head-color: @dark-color07;
 
-@background-color: #f0f2f5;
+@background-color: transparent;
+@body-bg-color: transparent;
+@gray-5: #f3f3f5;
 @icon-color: @dark-color07;
 @text-color-secondary: rgba(134, 144, 156);
 
 /*  border */
-@border-color: @light-color06;
+@border-color: rgba(0, 0, 0, 0.1);
 @border-hover-color: @dark-color01;
 @second-border-color: @light-color02;
 @border-focus-color: @green-color03;
-@border-radius: 2px;
-@border-color-base: rgba(0, 0, 0, 15%);
+@border-radius: 10px;
+@border-color-base: rgba(0, 0, 0, 0.1);
 
 /*  input */
 @input-border-color: @light-color08;
@@ -164,11 +169,12 @@
 @input-border-radius: @border-radius;
 
 /*  background */
-@bg-color: @light-color02;
-@body-bg-color: @light-color02;
+@bg-color: transparent;
+@body-bg-color: transparent;
 @th-bg-color: @light-color01;
 @card-bg-color: @white;
-@dashboard-bg-color: @gray-5;
+@dashboard-bg-color: transparent;
+@component-background: #ffffff;
 
 /* button */
 @btn-default-bg: @light-color02;
@@ -331,19 +337,25 @@
 // @table-header-default-button-background: @background-color;
 // @table-header-search-input-background: @background-color;
 // @table-header-search-input-border-color: @primary-color;
-@table-header-default-button-background: #fff;
+@table-header-default-button-background: #f3f3f5;
 @table-header-default-button-background-gray: #f6f7fb;
 @table-header-default-button-border: #fff;
 @table-header-default-button-color: #1d2129;
-@table-header-search-input-background: #fff;
+@table-header-search-input-background: #f3f3f5;
 @table-header-search-input-border-color: #fff;
 @table-header-search-input-font-size: 12px;
 @table-header-danger-button-color: @error-color;
 @table-header-disable-button-color: #c9cdd4;
 @table-header-disable-button-border: #fff;
 @table-header-disable-button-background: #fff;
-@table-row-selected-background: #f1f2f6;
+
+@table-row-hover-bg: #e9ebef;
+@table-row-selected-background: #ececf0;
 @table-checkbox-size: 12px;
+
+@tr-shadow: none;
+@base-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
 
 //form
 @form-item-label-color: @dark-color13;
@@ -384,4 +396,27 @@
   infoColor: @info-color;
   headerHeight: @header-height;
   productsColumnWidth: @products-column-width;
+}
+
+:global {
+  html, body {
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body {
+    background: linear-gradient(145deg, #030213 0%, #0d0c2b 50%, #1a1033 100%) !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    min-height: 100vh !important;
+    color: #ffffff; /* 기본 글자색을 밝게 */
+  }
+  
+  .ant-layout, 
+  .ant-layout-content,
+  .skyline-content,
+  #app {
+    background: transparent !important;
+  }
 }

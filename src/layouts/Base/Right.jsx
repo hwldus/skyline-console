@@ -115,7 +115,7 @@ export class Right extends Component {
     const { hasTab } = currentRoutes[currentRoutes.length - 1];
     const tabClass = hasTab ? styles['breadcrumb-has-tab'] : '';
     return (
-      <div className={`${styles.breadcrumb} ${tabClass}`}>
+      <div className={`${styles.breadcrumb} ${tabClass} custom-breadcrumb`}>
         <Breadcrumb>{items}</Breadcrumb>
       </div>
     );
