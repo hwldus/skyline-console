@@ -2,11 +2,16 @@
 
 :global {
   body {
-    font-family: @font-family;
-    background: linear-gradient(145deg, #030213 0%, #0d0c2b 50%, #1a1033 100%) !important;
-    background-attachment: fixed !important;
-    background-size: cover !important;
     min-height: 100vh;
+    font-family: @font-family;
+    background: linear-gradient(
+      145deg,
+      #030213 0%,
+      #0d0c2b 50%,
+      #1a1033 100%
+    ) !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
   }
 
   .code {
@@ -141,11 +146,11 @@
     }
 
     &-main {
-      background-color: transparent !important;
       margin-left: @nav-width - 20px;
       padding: 20px;
       overflow-x: hidden;
       overflow-y: auto;
+      background-color: transparent !important;
 
       @media (max-width: 1366px) {
         margin-left: @narrow-nav-width - 20px;
@@ -257,37 +262,38 @@
     border: none !important; /* 밑줄 같은 테두리 제거 */
   }
 
-  html, body {
-    background: linear-gradient(
-      180deg, 
-      #f8f7ff 0%,    /* 상단의 아주 밝은 라벤더 */
-      #f1f0ff 50%,   /* 중간의 부드러운 보라 */
-      #ece9ff 100%   /* 하단의 살짝 더 깊은 보라 */
-    ) !important;
-    background-attachment: fixed !important;
-    background-size: cover !important;
+  html,
+  body {
     min-height: 100vh !important;
+    background: linear-gradient(
+      180deg,
+      #f8f7ff 0%,
+      /* 상단의 아주 밝은 라벤더 */ #f1f0ff 50%,
+      /* 중간의 부드러운 보라 */ #ece9ff 100% /* 하단의 살짝 더 깊은 보라 */
+    ) !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
   }
 
   .ant-table {
-    background: #ffffff !important;
+    background: #fff !important;
   }
 
   .ant-table-wrapper {
-    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.1) !important;
-    border: 1px solid #ffffff !important;
-    background-color: #ffffff !important;
+    background-color: #fff !important;
+    border: 1px solid #fff !important;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 10%) !important;
   }
 
   .ant-tabs-nav-wrap {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
-    background: rgba(255, 255, 255, 0.3) !important; 
-    backdrop-filter: blur(8px); 
+    background: rgba(255, 255, 255, 30%) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 5%) !important;
+    backdrop-filter: blur(8px);
   }
 
   .ant-tabs-tab {
-    background: transparent !important;
     color: #717182 !important; /* 비활성 탭 색상 */
+    background: transparent !important;
   }
 
   .ant-tabs-tab-active .ant-tabs-tab-btn {
@@ -295,7 +301,7 @@
     font-weight: 550 !important;
   }
 
-  .ant-breadcrumb-link, 
+  .ant-breadcrumb-link,
   .ant-breadcrumb-separator {
     color: #59596e !important; /* 약간 짙은 회보라색 */
     font-size: 13px;
@@ -308,7 +314,36 @@
 
   // 현재 페이지 이름(상단)
   .custom-breadcrumb {
-    background: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 30%) !important;
     backdrop-filter: blur(8px);
+  }
+
+  /* Primary 버튼: 인디고 → 마젠타 그라데이션 (스크린샷 UI와 동일 계열) */
+  .ant-btn-primary {
+    color: #fff !important;
+    text-shadow: none;
+    background: @gradient-primary !important;
+    border: none !important;
+
+    &:hover,
+    &:focus {
+      color: #fff !important;
+      background: @gradient-primary-hover !important;
+      border: none !important;
+    }
+
+    &:active {
+      color: #fff !important;
+      background: @gradient-primary-active !important;
+    }
+
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus,
+    &[disabled]:active {
+      color: rgba(255, 255, 255, 65%) !important;
+      background: #d9d9d9 !important;
+      border: none !important;
+    }
   }
 }

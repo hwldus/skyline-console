@@ -12,16 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Ant Design tokens: solid primary for links/focus/checkbox; filled buttons use gradient in base.less.
 module.exports = {
-  'primary-color': '#0068FF',
-  'link-color': '#0068FF',
-  // 'link-hover-color': '#005ADE',
-  // 'link-active-color': '005ADE',
+  'primary-color': '#7A4EFF',
+  'link-color': '#7A4EFF',
   'success-color': '#57E39B',
   'warning-color': '#979797',
-  'error-color': '#EB354D',
-  'btn-default-color': '#0068FF',
-  'btn-default-border': '#0068FF',
-  'border-radius-base': '4px',
+  'error-color': '#D4183D',
+  'btn-default-color': '#030213',
+  'btn-default-border': 'rgba(0, 0, 0, 0.1)',
+  'border-color-base': 'rgba(0, 0, 0, 0.1)',
+  'input-bg': '#F3F3F5',
+  'border-radius-base': '10px',
   'font-size-base': '12px',
 };
